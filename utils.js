@@ -47,7 +47,7 @@ async function getTokenData(tokenId) {
       async (bail) => {
         // retrieve metadata for asset from opensea
         const response = await axios.get(
-          `https://api.opensea.io/api/v1/asset/${process.env.CONTRACT_ADDRESS}/${tokenId}`,
+          `https://deep-index.moralis.io/api/v2/nft/${process.env.CONTRACT_ADDRESS}/${tokenId}?chain=eth&format=decimal`,
           {
             headers: {
               'X-API-KEY': process.env.X_API_KEY,

@@ -1,4 +1,5 @@
 // external
+require('dotenv').config()
 const { createAlchemyWeb3 } = require('@alch/alchemy-web3');
 const { ethers } = require('ethers');
 const retry = require('async-retry');
@@ -13,7 +14,7 @@ const abi = require('./abi.json');
 
 // connect to Alchemy websocket
 const web3 = createAlchemyWeb3(
-  `wss://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`
+  `wss://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`
 );
 
 // sometimes web3.js can return duplicate transactions in a split second, so
